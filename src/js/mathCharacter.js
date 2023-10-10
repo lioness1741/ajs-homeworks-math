@@ -4,27 +4,21 @@ export default class MathCharacter {
     this.attack = attack;
     this.stoned = stoned;
     this.distance = distance;
-  }
-  
+  }  
   get stoned() {
-    return this.dope;
-  }
-  
+    return this.stoned;
+  }  
   set stoned(stoned) {
-    this.dope = stoned;
-  }
-  
+    this.stoned = stoned;
+  }  
   set attack(attack) {
     this.attackValue = attack;
-  }
-  
+  }  
   get attack() {
-    let newAttack = this.attackValue * (1 - (this.distance - 1) / 10);
-    
+    let newAttack = this.attackValue * (1 - (this.distance - 1) / 10);    
     if (this.stoned) {
       newAttack -= Math.log2(this.distance) * 5;
-    }
-    
+    }    
     if (newAttack > 100) {
       newAttack = 100;
     } else if (newAttack > 0) {
